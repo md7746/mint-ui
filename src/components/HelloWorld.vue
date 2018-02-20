@@ -79,12 +79,13 @@
           awesome-vue
         </a>
       </li>
-      <li><mt-button @click='handleClick'>按钮</mt-button></li>
+      <li><span @click='handleClick'>按钮</span></li>
     </ul>
   </div>
 </template>
 
 <script>
+import { Toast } from 'mint-ui';
 export default {
   name: 'HelloWorld',
   data () {
@@ -94,7 +95,11 @@ export default {
   },
   methods:{
     handleClick:function(){
-      this.$toast('hello world')
+      Toast({
+  message: 'Upload Complete',
+  position: 'bottom',
+  duration: 500
+});
     }
   }
 }
